@@ -1,0 +1,14 @@
+//Primary
+$dark-des-cyan: hsl(180, 29%, 50%) !default;
+//Neutral
+$light-gray-cyan-a: hsl(180, 52%, 96%) !default;
+$light-gray-cyan-b: hsl(180, 31%, 95%) !default;
+$dark-gray-cyan: hsl(180, 8%, 52%) !default;
+$vdark-gray-cyan: hsl(180, 14%, 20%) !default;
+
+$colors: (
+  background-color: $light-gray-cyan-a,
+  text-color-primary: $dark-gray-cyan,
+  text-color-secondary: $vdark-gray-cyan,
+  filter-tablet: $light-gray-cyan-b,
+);

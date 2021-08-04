@@ -1,0 +1,12 @@
+@use "./colors" as *;
+
+:root {
+  //Colors
+  @each $prop, $value in $colors {
+    --#{$prop}: #{$value};
+  }
+  //Default
+  --font-family: "Spartan", sans-serif;
+  --fz-sm: 15px;
+  --fz-md: 16px;
+}
