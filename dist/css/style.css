@@ -17,27 +17,55 @@
 
 .cards {
   padding: 3.5rem 1.5rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+@media only screen and (min-width: 48em) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 64em) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
 }
 
 .card {
   padding: 2rem 1.5rem 1.5rem 1.125rem;
   background-color: #fff;
   position: relative;
-  border-radius: 6px;
+  border-radius: 0.375rem;
   box-shadow: 3px 10px 30px -6px var(--foreground-color);
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (min-width: 64em) {
+  .card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
 }
 .card::before {
   content: "";
   position: absolute;
   border-radius: 0.3125rem;
-  top: 2px;
-  bottom: 2px;
-  left: -5px;
+  top: 0.125rem;
+  bottom: 0.125rem;
+  left: -0.3125rem;
   background-color: var(--foreground-color);
   z-index: -1;
 }
 .card.active-featured::before {
   width: 1.25rem;
+}
+.card-main {
+  display: flex;
+  gap: 1.5rem;
 }
 .card-img {
   width: 3.125rem;
@@ -45,6 +73,13 @@
   position: absolute;
   top: -1.5625rem;
   left: 1.125rem;
+}
+@media only screen and (min-width: 64em) {
+  .card-img {
+    position: initial;
+    width: 5.5rem;
+    height: 5.5rem;
+  }
 }
 .card-header {
   gap: 1rem;
@@ -60,6 +95,16 @@
 .card-body-title {
   font-size: 1em;
   margin-bottom: 1.25rem;
+  cursor: pointer;
+  transition: color 200ms ease-in-out;
+}
+@media only screen and (min-width: 64em) {
+  .card-body-title {
+    margin-bottom: 0.75rem;
+  }
+}
+.card-body-title:hover {
+  color: var(--foreground-color);
 }
 .card-body-content {
   display: flex;
@@ -74,6 +119,11 @@
 .card-body-content li:not(:first-child)::before {
   content: "•";
   margin-right: 0.375rem;
+}
+@media only screen and (min-width: 64em) {
+  .card-body-content {
+    border-bottom: initial;
+  }
 }
 .card-footer {
   padding-top: 1rem;
@@ -94,6 +144,11 @@
   border: none;
   outline: none;
   cursor: pointer;
+  transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
+}
+.tooltip:hover {
+  color: var(--background-color);
+  background-color: var(--foreground-color);
 }
 
 html {
@@ -120,7 +175,7 @@ body {
   text-rendering: optimizeSpeed;
   background-color: var(--background-color);
 }
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 48em) {
   body {
     font-size: var(--fz-md);
   }
@@ -219,7 +274,7 @@ picture {
   width: 100%;
   height: 9.75rem;
 }
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 48em) {
   .main-header-img > img {
     height: 14rem;
   }
@@ -250,6 +305,10 @@ picture {
   overflow: hidden;
   cursor: default;
 }
+.filter .tooltip:hover {
+  color: var(--foreground-color);
+  background-color: var(--background-color);
+}
 .filter .tooltip-control {
   display: flex;
   flex-wrap: wrap;
@@ -258,10 +317,14 @@ picture {
 .filter .tooltip > button {
   border: none;
   outline: none;
-  padding: 0.5rem;
+  padding: 0.625rem;
   margin-left: 0.625rem;
   background-color: var(--foreground-color);
   cursor: pointer;
+  transition: background-color 200ms ease-in-out;
+}
+.filter .tooltip > button:hover {
+  background-color: var(--text-color-secondary);
 }
 .filter-clear > button {
   border: none;
@@ -272,6 +335,12 @@ picture {
   font-family: var(--font-family);
   font-size: 1em;
   cursor: pointer;
+  border-bottom: 1px solid transparent;
+  transition: color 200ms ease-in-out, border-bottom 300ms ease-in-out;
+}
+.filter-clear > button:hover {
+  color: var(--foreground-color);
+  border-bottom: 1px solid var(--foreground-color);
 }
 
 /*# sourceMappingURL=style.css.map */

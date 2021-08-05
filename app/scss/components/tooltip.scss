@@ -10,4 +10,10 @@
   border: none;
   outline: none;
   cursor: pointer;
+  transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
+
+  &:hover {
+    color: var(--background-color);
+    background-color: var(--foreground-color);
+  }
 }

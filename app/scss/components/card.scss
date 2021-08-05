@@ -2,22 +2,43 @@
 
 .cards {
   padding: rem(56) rem(24) rem(32);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: rem(40);
+
+  @include mq(small) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mq(medium) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .card {
   padding: rem(32) rem(24) rem(24) rem(18);
   background-color: #fff;
   position: relative;
-  border-radius: 6px;
+  border-radius: rem(6);
   box-shadow: 3px 10px 30px -6px var(--foreground-color);
+  display: flex;
+  flex-direction: column;
+
+  @include mq(medium) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: rem(42);
+    padding-right: rem(42);
+  }
 
   &::before {
     content: "";
     position: absolute;
     border-radius: rem(5);
-    top: 2px;
-    bottom: 2px;
-    left: -5px;
+    top: rem(2);
+    bottom: rem(2);
+    left: rem(-5);
     background-color: var(--foreground-color);
     z-index: -1;
   }
@@ -28,12 +49,23 @@
     }
   }
 
+  &-main {
+    display: flex;
+    gap: rem(24);
+  }
+
   &-img {
     width: rem(50);
     height: rem(50);
     position: absolute;
     top: rem(-25);
     left: rem(18);
+
+    @include mq(medium) {
+      position: initial;
+      width: rem(88);
+      height: rem(88);
+    }
   }
 
   &-header {
@@ -52,6 +84,16 @@
     &-title {
       font-size: 1em;
       margin-bottom: rem(20);
+      cursor: pointer;
+      transition: color 200ms ease-in-out;
+
+      @include mq(medium) {
+        margin-bottom: rem(12);
+      }
+
+      &:hover {
+        color: var(--foreground-color);
+      }
     }
     &-content {
       display: flex;
@@ -68,6 +110,10 @@
           content: "•";
           margin-right: rem(6);
         }
+      }
+
+      @include mq(medium) {
+        border-bottom: initial;
       }
     }
   }
