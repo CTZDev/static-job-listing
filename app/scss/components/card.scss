@@ -1,0 +1,84 @@
+@use "../util" as *;
+
+.cards {
+  padding: rem(56) rem(24) rem(32);
+}
+
+.card {
+  padding: rem(32) rem(24) rem(24) rem(18);
+  background-color: #fff;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 3px 10px 30px -6px var(--foreground-color);
+
+  &::before {
+    content: "";
+    position: absolute;
+    border-radius: rem(5);
+    top: 2px;
+    bottom: 2px;
+    left: -5px;
+    background-color: var(--foreground-color);
+    z-index: -1;
+  }
+
+  &.active-featured {
+    &::before {
+      width: rem(20);
+    }
+  }
+
+  &-img {
+    width: rem(50);
+    height: rem(50);
+    position: absolute;
+    top: rem(-25);
+    left: rem(18);
+  }
+
+  &-header {
+    gap: rem(16);
+    margin-bottom: rem(10);
+    &-title {
+      font-size: 0.9em;
+      color: var(--foreground-color);
+    }
+    &-relevant {
+      gap: rem(6);
+    }
+  }
+
+  &-body {
+    &-title {
+      font-size: 1em;
+      margin-bottom: rem(20);
+    }
+    &-content {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      color: var(--text-color-primary);
+      font-size: 0.9em;
+      gap: rem(12);
+      padding-bottom: rem(18);
+      border-bottom: 1px solid var(--text-color-primary);
+
+      & li:not(:first-child) {
+        &::before {
+          content: "•";
+          margin-right: rem(6);
+        }
+      }
+    }
+  }
+
+  &-footer {
+    padding-top: rem(16);
+
+    &-items {
+      display: flex;
+      flex-flow: row wrap;
+      gap: rem(16);
+    }
+  }
+}

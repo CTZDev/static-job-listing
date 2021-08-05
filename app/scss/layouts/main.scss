@@ -1,0 +1,57 @@
+@use "../util" as *;
+
+.filter {
+  margin: 0 rem(24);
+  padding: rem(20);
+  background-color: #fff;
+  border-radius: rem(8);
+  margin-top: rem(-36);
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+    max-height: rem(450);
+  }
+
+  & .tooltip {
+    padding: 0;
+    padding-left: rem(8);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    cursor: default;
+
+    &-control {
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(16);
+    }
+
+    & > button {
+      border: none;
+      outline: none;
+      padding: rem(8);
+      margin-left: rem(10);
+      background-color: var(--foreground-color);
+      cursor: pointer;
+    }
+  }
+
+  &-clear {
+    & > button {
+      border: none;
+      outline: none;
+      background-color: transparent;
+      font-weight: bold;
+      color: var(--text-color-primary);
+      font-family: var(--font-family);
+      font-size: 1em;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@use "../util" as *;
+
+.tooltip {
+  border-radius: rem(6);
+  padding: rem(10);
+  font-weight: bold;
+  color: var(--foreground-color);
+  background-color: var(--background-color);
+  font-family: var(--font-family);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

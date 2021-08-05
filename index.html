@@ -16,34 +16,47 @@
       </picture>
     </header>
     <main>
+      <section class="filter flex flex-ai-c flex-jc-sb">
+        <div class="tooltip-control">
+          <!-- <li class="tooltip">
+            Frontend
+            <button type="button">
+              <img src="./images/icon-remove.svg" alt="Delete Tooltip" />
+            </button>
+          </li> -->
+        </div>
+        <div class="filter-clear">
+          <button type="button">Clear</button>
+        </div>
+      </section>
       <section class="cards">
         <article class="card">
-          <img src="./images/photosnap.svg" alt="PhotoSnap" />
-          <div class="card-header">
-            <h2>PhotoSnap</h2>
+          <img src="./images/photosnap.svg" alt="Photosnap" class="card-img" />
+          <div class="card-header flex flex-ai-c flex-fw-w">
+            <h2 class="card-header-title">Photosnap</h2>
+            <ul class="card-header-relevant flex flex-ai-c flex-fw-w">
+              <li class="badge badge--new">New!</li>
+              <li class="badge badge--featured">Featured</li>
+            </ul>
             <!-- Crear dinamicamente los toooltips -->
           </div>
           <div class="card-body">
-            <h2>Senior Frontend Developer</h2>
+            <h2 class="card-body-title">Senior Frontend Developer</h2>
             <ul class="card-body-content">
-              <li>1day go</li>
+              <li>1d ago</li>
               <li>Full Time</li>
-              <li>Usa Only</li>
+              <li>USA only</li>
             </ul>
           </div>
           <div class="card-footer">
-            <ul class="card-footer-role">
-              <li class="card-tooltip">Frontend</li>
-            </ul>
-            <ul class="card-footer-level">
-              <li class="card-tooltip">Senior</li>
-            </ul>
-            <ul class="card-footer-languages">
-              <li class="card-tooltip">HTML</li>
-              <li class="card-tooltip">CSS</li>
-              <li class="card-tooltip">JavaScript</li>
-            </ul>
-            <ul class="tools"></ul>
+            <div class="card-footer-items">
+              <li class="tooltip" data-footer-role>Frontend</li>
+              <li class="tooltip" data-footer-level>Senior</li>
+              <li class="tooltip" data-footer-languages>HTML</li>
+              <li class="tooltip" data-footer-languages>CSS</li>
+              <li class="tooltip" data-footer-languages>JavaScript</li>
+              <!-- <li class="tooltip" data-footer-tools></li> -->
+            </div>
           </div>
         </article>
       </section>
@@ -78,6 +91,14 @@
           <div class="tools"></div>
         </div>
       </article>
+    </template>
+    <template id="template-filter-tooltip">
+      <li class="tooltip">
+        Selected Job
+        <button type="button">
+          <img src="./images/icon-remove.svg" alt="Delete Tooltip" />
+        </button>
+      </li>
     </template>
   </body>
 </html>

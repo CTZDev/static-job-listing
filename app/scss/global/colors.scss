@@ -7,8 +7,9 @@ $dark-gray-cyan: hsl(180, 8%, 52%) !default;
 $vdark-gray-cyan: hsl(180, 14%, 20%) !default;
 
 $colors: (
+  foreground-color: $dark-des-cyan,
   background-color: $light-gray-cyan-a,
+  filter-tablet: $light-gray-cyan-b,
   text-color-primary: $dark-gray-cyan,
   text-color-secondary: $vdark-gray-cyan,
-  filter-tablet: $light-gray-cyan-b,
 );

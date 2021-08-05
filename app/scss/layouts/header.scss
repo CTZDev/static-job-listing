@@ -1,0 +1,15 @@
+@use "../util" as *;
+
+.main-header {
+  background-color: var(--foreground-color);
+  &-img {
+    & > img {
+      width: 100%;
+      height: rem(156);
+
+      @include mq(small) {
+        height: rem(224);
+      }
+    }
+  }
+}

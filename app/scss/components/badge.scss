@@ -1,0 +1,18 @@
+@use "../util" as *;
+
+.badge {
+  text-transform: uppercase;
+  color: var(--background-color);
+  border-radius: rem(12);
+  padding: rem(5) rem(10) rem(3);
+  font-size: 0.75em;
+  font-weight: bold;
+
+  &--new {
+    background-color: var(--foreground-color);
+  }
+
+  &--featured {
+    background-color: var(--text-color-secondary);
+  }
+}
