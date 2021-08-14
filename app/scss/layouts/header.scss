@@ -2,6 +2,8 @@
 
 .main-header {
   background-color: var(--foreground-color);
+  position: relative;
+
   &-img {
     & > img {
       width: 100%;
@@ -11,5 +13,14 @@
         height: rem(224);
       }
     }
+  }
+
+  & .response-error {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 4px 4px 10px 2px var(--text-color-secondary);
+    padding: rem(18);
   }
 }

@@ -52,6 +52,11 @@
   &-main {
     display: flex;
     gap: rem(24);
+    border-bottom: 1px solid var(--text-color-primary);
+
+    @include mq(medium) {
+      border-bottom: initial;
+    }
   }
 
   &-img {
@@ -103,17 +108,12 @@
       font-size: 0.9em;
       gap: rem(12);
       padding-bottom: rem(18);
-      border-bottom: 1px solid var(--text-color-primary);
 
       & li:not(:first-child) {
         &::before {
           content: "•";
           margin-right: rem(6);
         }
-      }
-
-      @include mq(medium) {
-        border-bottom: initial;
       }
     }
   }

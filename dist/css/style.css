@@ -66,6 +66,12 @@
 .card-main {
   display: flex;
   gap: 1.5rem;
+  border-bottom: 1px solid var(--text-color-primary);
+}
+@media only screen and (min-width: 64em) {
+  .card-main {
+    border-bottom: initial;
+  }
 }
 .card-img {
   width: 3.125rem;
@@ -114,16 +120,10 @@
   font-size: 0.9em;
   gap: 0.75rem;
   padding-bottom: 1.125rem;
-  border-bottom: 1px solid var(--text-color-primary);
 }
 .card-body-content li:not(:first-child)::before {
   content: "•";
   margin-right: 0.375rem;
-}
-@media only screen and (min-width: 64em) {
-  .card-body-content {
-    border-bottom: initial;
-  }
 }
 .card-footer {
   padding-top: 1rem;
@@ -269,6 +269,7 @@ picture {
 
 .main-header {
   background-color: var(--foreground-color);
+  position: relative;
 }
 .main-header-img > img {
   width: 100%;
@@ -278,6 +279,14 @@ picture {
   .main-header-img > img {
     height: 14rem;
   }
+}
+.main-header .response-error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 4px 4px 10px 2px var(--text-color-secondary);
+  padding: 1.125rem;
 }
 
 .filter {
