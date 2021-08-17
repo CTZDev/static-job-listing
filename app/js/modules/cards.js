@@ -126,6 +126,15 @@ d.addEventListener("click", (e) => {
       $filter.classList.remove("is-active");
     }
   }
+
+  if (e.target.matches("#clearJobs")) {
+    jobsFilter.length = 0;
+    d.querySelectorAll(".card").forEach((card) => {
+      card.classList.remove("active-featured");
+      card.classList.remove("is-active");
+    });
+    $filter.classList.remove("is-active");
+  }
 });
 
 export default getJobs;
