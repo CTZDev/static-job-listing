@@ -5,7 +5,7 @@ const jobs = [];
 
 const getJobs = async () => {
   try {
-    const response = await fetch("../../../data.json");
+    const response = await fetch("./data.json");
     if (!response.ok) throw { status: response.status, statusText: response.statusText };
     const data = await response.json();
     drawJobs(data);
