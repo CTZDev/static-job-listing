@@ -18,14 +18,7 @@
     </header>
     <main>
       <section class="filter flex flex-ai-c flex-jc-sb">
-        <div class="tooltip-control">
-          <li class="tooltip">
-            Frontend
-            <button type="button">
-              <img src="./images/icon-remove.svg" alt="Delete Tooltip" />
-            </button>
-          </li>
-        </div>
+        <div class="tooltip-control"></div>
         <div class="filter-clear">
           <button type="button">Clear</button>
         </div>
@@ -35,34 +28,34 @@
     <template id="template-card">
       <article class="card">
         <div class="card-main">
-          <img src="./images/photosnap.svg" alt="Photosnap" class="card-img" />
+          <img src="./images/photosnap.svg" alt="Logo" class="card-img" />
           <div class="card-content">
             <div class="card-header flex flex-ai-c flex-fw-w">
-              <h2 class="card-header-title">Photosnap</h2>
+              <h2 class="card-header-title">Company</h2>
               <ul class="card-header-relevant flex flex-ai-c flex-fw-w"></ul>
             </div>
             <div class="card-body">
-              <h2 class="card-body-title">Senior Frontend Developer</h2>
+              <h2 class="card-body-title">Position</h2>
               <ul class="card-body-content">
-                <li class="card-body-posted">1d ago</li>
-                <li class="card-body-contract">Full Time</li>
-                <li class="card-body-location">USA only</li>
+                <li class="card-body-posted">PostedAt</li>
+                <li class="card-body-contract">Contract</li>
+                <li class="card-body-location">Location</li>
               </ul>
             </div>
           </div>
         </div>
         <div class="card-footer">
           <div class="card-footer-items">
-            <li class="tooltip" data-footer-role>Frontend</li>
-            <li class="tooltip" data-footer-level>Senior</li>
+            <button type="button" class="tooltip" data-footer-role>Role</button>
+            <button type="button" class="tooltip" data-footer-level>Level</button>
           </div>
         </div>
       </article>
     </template>
     <template id="template-filter-tooltip">
       <li class="tooltip">
-        Selected Job
-        <button type="button">
+        <p>Selected Job</p>
+        <button type="button" id="btnclose-tooltip">
           <img src="./images/icon-remove.svg" alt="Delete Tooltip" />
         </button>
       </li>

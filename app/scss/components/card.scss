@@ -49,6 +49,11 @@
     }
   }
 
+  &.is-active {
+    display: none;
+    order: 1;
+  }
+
   &-main {
     display: flex;
     gap: rem(24);

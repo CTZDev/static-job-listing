@@ -63,6 +63,10 @@
 .card.active-featured::before {
   width: 1.25rem;
 }
+.card.is-active {
+  display: none;
+  order: 1;
+}
 .card-main {
   display: flex;
   gap: 1.5rem;
@@ -137,10 +141,9 @@
 .tooltip {
   border-radius: 0.375rem;
   padding: 0.625rem;
-  font-weight: bold;
+  font: bold 1rem var(--font-family);
   color: var(--foreground-color);
   background-color: var(--background-color);
-  font-family: var(--font-family);
   border: none;
   outline: none;
   cursor: pointer;
@@ -149,6 +152,9 @@
 .tooltip:hover {
   color: var(--background-color);
   background-color: var(--foreground-color);
+}
+.tooltip > button > img {
+  pointer-events: none;
 }
 
 html {

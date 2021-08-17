@@ -3,10 +3,9 @@
 .tooltip {
   border-radius: rem(6);
   padding: rem(10);
-  font-weight: bold;
+  font: bold 1rem var(--font-family);
   color: var(--foreground-color);
   background-color: var(--background-color);
-  font-family: var(--font-family);
   border: none;
   outline: none;
   cursor: pointer;
@@ -15,5 +14,11 @@
   &:hover {
     color: var(--background-color);
     background-color: var(--foreground-color);
+  }
+
+  & > button {
+    & > img {
+      pointer-events: none;
+    }
   }
 }
